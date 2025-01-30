@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Users\stegmant\OneDrive - Colostate\CIS-340\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-2675409489.index
-2437072148.index
