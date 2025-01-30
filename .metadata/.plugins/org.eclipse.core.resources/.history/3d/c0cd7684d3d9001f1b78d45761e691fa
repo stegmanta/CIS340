@@ -1,0 +1,44 @@
+package InClassProgram;
+import java.util.Date;
+import javax.swing.*;
+
+//Tayler Stegman
+//01-21-2025
+//Phone Bill Project
+
+
+//$.12 per minute
+
+
+
+public class PhoneBill {
+
+	public static void main(String[] args) {
+		//Declare all variables and constants
+		final double RATE = 19.99;
+		double minutes, phoneBill = 0;
+		String name = JOptionPane.showInputDialog(null,"Enter Customer Name", "Phone Bill", JOptionPane.QUESTION_MESSAGE), msg = "";
+		String type = Integer.parseInt("8");
+		Date dateCreated = new Date();
+		//Data input
+		minutes = Double.parseDouble(JOptionPane.showInputDialog("How many minutes"));
+		//Calculate cell phone bill
+		if(minutes > 200 && minutes < 350) {
+			phoneBill += (((minutes - 200) * 0.10) + RATE);
+			if(minutes > 350) {
+				phoneBill += (((minutes - 200) * 0.10) + RATE);
+			}
+		}else {
+			phoneBill = RATE;
+		}
+		//Output cell phone bill
+		msg = "Customer Name: " + name + "\nYour minutes " + minutes + "\nYour Bill: $" + String.format("%.2f", phoneBill)
+				+ "\nBill Date: " + dateCreated.toString();
+		System.out.println(phoneBill);
+		JOptionPane.showMessageDialog(null, new JTextArea(msg));
+		
+
+	}
+
+}
+
