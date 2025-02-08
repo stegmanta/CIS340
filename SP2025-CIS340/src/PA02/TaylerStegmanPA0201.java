@@ -15,6 +15,7 @@
 package PA02;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 public class TaylerStegmanPA0201 {
 
@@ -22,7 +23,12 @@ public class TaylerStegmanPA0201 {
 		int numCust = 0, custType, option = 0, month = 0;
 		double enrgUsed = 0.0, electricBill = 0.0;
 		String strCustType = "", custName = "", strMonth = "", output = "";
-		String[] custOutput;
+		//arrays to hold each input for each customer
+		String[] name;
+		String[] arrCustType;
+		Double[] arrEnrgUsed;
+		String[] arrMonth;
+		Double[] arrElectricBill;
 		
 		//try numCust input
 		try {
@@ -31,7 +37,15 @@ public class TaylerStegmanPA0201 {
 				throw new Exception();
 		}catch(Exception ex) {
 			JOptionPane.showMessageDialog(null, "Error in customer number input, Exiting Program");
+			System.exit(0);
 		}
+		
+		//create arrays with sizes based on number of customer
+		name = new String[numCust];
+		arrCustType = new String[numCust];
+		arrEnrgUsed = new Double[numCust];
+		arrMonth = new String[numCust];
+		arrElectricBill = new Double[numCust];
 		
 		//loop through based on number of customers
 		for (int i = 0; i < numCust; i++) {
@@ -165,7 +179,7 @@ public class TaylerStegmanPA0201 {
 				}
 				//check for tier 2
 				else {
-					electricBill = 6.75 + (500 * 0.04604) + (enrgUsed - 500 * 0.09000);
+					electricBill = 6.75 + (500 * 0.04604) + ((enrgUsed - 500) * 0.09000);
 				}
 				break;
 			//winter months
@@ -178,18 +192,21 @@ public class TaylerStegmanPA0201 {
 					electricBill = 6.75 + (enrgUsed * 0.04604);
 				break;
 			}
-			
-//			int numCust = 0, custType, option = 0, month = 0;
-//			double enrgUsed = 0.0, electricBill = 0.0;
-//			String strCustType = "", custName = "", strMonth = "", output = "";
-//			String[] custOutput;
-			
+			//set array values based on declared variables above
+			name[i] = custName;
+			arrCustType[i] = strCustType;
+			arrEnrgUsed[i] = enrgUsed;
+			arrMonth[i] = strMonth;
+			arrElectricBill[i] = electricBill;
 			//generate output
-			
+			output += name[i] + "\t" + arrCustType[i] + "\t\t" + String.format("%.2f", arrEnrgUsed[i]) + "\t" + arrMonth[i] + "\t$ " + String.format("%.2f", arrElectricBill[i]) + "\n";
 				
 		}//end numCust loop
+		//show output
+		JOptionPane.showMessageDialog(null,new JTextArea("Name\tType of Customer\tEnergy Used\tMonth\tBill amount\n" + output), "ELECTRIC BILL CALCULATOR", JOptionPane.INFORMATION_MESSAGE);
+
 		
+//		JOptionPane.showMessageDialog(null, new JTextArea(output),"WATER BILL CALCULATOR",JOptionPane.INFORMATION_MESSAGE);
+	}//end main
 
-	}
-
-}
+}//end class
