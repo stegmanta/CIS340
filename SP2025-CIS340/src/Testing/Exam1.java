@@ -28,7 +28,7 @@ public class Exam1 {
 			bigArr[i] = i;
 		}
 		
-		binarySearch(bigArr, 55);
+		binarySearch(bigArr, 51);
 	}//end main
 	
 	public static void selectionSort(int[] arr) {
