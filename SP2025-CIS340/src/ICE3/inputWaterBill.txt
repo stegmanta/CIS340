@@ -1,0 +1,6 @@
+Jim Brown, 1, 112233, 9600
+Eric Jones, 2, 445566, 8000
+Jim Borth, 1, 665577, 7500
+Maria Rod, 2, 567898, 5800
+Mary Smith, 2, 431211, 6450
+Michael Smith, 1, 991784, 9800
