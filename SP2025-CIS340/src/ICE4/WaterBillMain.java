@@ -31,10 +31,11 @@ public class WaterBillMain {
 		// 1- Call the getFileLength method to get the number of lines in the data input file, "inputWaterBill.txt"
 		int numberOfLines = getFileLength("inputWaterBill.txt");
 		// 2- Create customers array with size of noOfCustomers
-		
+		customers = new Customer[numberOfLines + noOfCustomers];
 		
 		// read data from the input data file before reading the data from the users 
 		readFromFile("inputWaterBill.txt");
+		System.out.println("Out of loop");
 		
 		// start looping to read customer information and compute water bills 		
 		for (int i = 0; i<noOfCustomers; i++) {
@@ -55,7 +56,8 @@ public class WaterBillMain {
 		
 		// To Complete
 		// call the addCustomers() method to create a Customer object and add it to the customers array
-		
+		System.out.println("In loop at " + i);
+		addCustomer(custName, custNumber, gallons, custType);
 	
       }// end for
 		
@@ -81,8 +83,11 @@ public class WaterBillMain {
 	private static void addCustomer(String custName, int custNumber, int g, int type) {
 		// To Complete
         // Create the Customer and WaterBill objects and add the Customer object to the array of customers at the increasing index
-	    
-		
+		System.out.println(Customer.getNoOfCustObjects());
+		Customer cust = new Customer(custName, custNumber, new WaterBill(g,type)); //left to right thats how this starts at 0
+		System.out.println("After" + Customer.getNoOfCustObjects());
+		customers[Customer.getNoOfCustObjects() - 1] = cust;
+		System.out.println("End of loop");
 	}//end addCustomer
 
 	// display program output
@@ -93,6 +98,9 @@ public class WaterBillMain {
 		  
               // To Complete
               // Use the for loop to read Customer data from the customers array, use method toString()
+              for(int i = 0; i < Customer.getNoOfCustObjects();i++) {
+            	  out += "\n" + customers[i].toString();
+              }
           
               // display the result 
 		      JOptionPane.showMessageDialog(null, new JTextArea(out));
@@ -113,7 +121,7 @@ public class WaterBillMain {
 	      for (int j = i + 1; j < customers.length; j++) {
 	    	// To Complete
 	    	// Write if-statement to compare the Customer objects based on the bill value  
-	    	  if (true /* compare Customers objects based on the bill values */ ) {
+	    	  if (customers[j].getBill().getValue() < currentMin.getBill().getValue()) {
 		          currentMin = customers[j];
 		          currentMinIndex = j;
 		        } // end if
@@ -146,7 +154,9 @@ public class WaterBillMain {
        
         // To Complete
         // Write a for loop to read the customer data using the toString method
-		
+		for(Customer customers: customers) {
+			out += "\n" + customers.toString();
+		}
 		
 	    // Write formatted output to the file
 	    write.print(out);
@@ -170,16 +180,15 @@ public class WaterBillMain {
 		
 		    // Create a Scanner for the file
 		    Scanner sc = new Scanner(file);
-
-		   
 		    
+		   
 		   // Start reading data from file using while loop
 		    int i = 0;
 		    while (sc.hasNext()) {
 	          // Read the file data line by line, then count the number of lines using i
 		    	sc.nextLine();
 		    	// read data from file, line by line
-		       	//JOptionPane.showMessageDialog(null, sc.nextLine());
+		    	
 		    	i++;
 
 		   }// end while
@@ -208,17 +217,21 @@ public class WaterBillMain {
 
 			    // Read data from a file, the data fields are separated by ',' 
 			    // Change the Scanner default delimiter to ',' or '|', '\r\n'
-			    
+			    sc.useDelimiter(",|\r\n");
 			    
 			   // Start reading data from file using while loop
 			 
 			    while (sc.hasNext()) {
 				   
 			    	// To Complete - Read data from file token by token, separated by ','
+			    	String name = sc.next().trim();
+			    	int type = Integer.parseInt(sc.next().trim());
+			    	int number = Integer.parseInt(sc.next().trim());
+			    	int gallons = Integer.parseInt(sc.next().trim());
+			       	//JOptionPane.showMessageDialog(null, sc.nextLine());
 			    	
-				   				   
 			    	// To Complete - call method addCustomer to create and add customer object to the Customers array
-				  
+			    	addCustomer(name, number, gallons, type);
 				   				  
 			   }// end while
 				
