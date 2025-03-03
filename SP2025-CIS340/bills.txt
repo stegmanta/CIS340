@@ -1,10 +1,16 @@
 Water Bill
-name	number	Gallons	Value	Status	Date
-Maria Rod	567898	5800	26.94	Duplex	Thu Feb 27 16:15:23 MST 2025
-Mary Smith	431211	6450	28.22	Duplex	Thu Feb 27 16:15:23 MST 2025
-Jim Borth	665577	7500	28.67	SingleFamily	Thu Feb 27 16:15:23 MST 2025
-Eric Jones	445566	8000	31.27	Duplex	Thu Feb 27 16:15:23 MST 2025
-Tay Steg	123456	8475	32.21	Duplex	Thu Feb 27 16:15:40 MST 2025
-Jim Brown	112233	9600	33.60	SingleFamily	Thu Feb 27 16:15:23 MST 2025
-Michael Smith	991784	9800	34.07	SingleFamily	Thu Feb 27 16:15:23 MST 2025
-Tay Steggsgs	123456	48654	134.98	Duplex	Thu Feb 27 16:15:51 MST 2025
+Name	Days of Stay	No. of Rental Items	Rental Amount	Total Discount	Sales Tax	Total Charges
+Customer Name: Jane Smith
+Days of Stay: 2
+No. of Rental Items: 0
+Rental Amount: $120.00
+Total Discount: $5.00
+Sales Tax: $8.63
+Total Charges: $123.63
+Customer Name: John Doe
+Days of Stay: 3
+No. of Rental Items: 1
+Rental Amount: $330.00
+Total Discount: $66.00
+Sales Tax: $19.80
+Total Charges: $283.80
