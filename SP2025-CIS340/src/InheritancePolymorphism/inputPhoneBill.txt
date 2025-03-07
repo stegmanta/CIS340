@@ -1,0 +1,6 @@
+112233, Jim Brown, 0, 550, 0
+445566, Eric Jones, 0, 790, 0
+665577, Jim Borth, 1, 0, 3
+567898, Maria Rod, 1, 0, 2
+431211, Mary Smith, 1, 0, 4
+991784, Michael Smith, 0, 821, 0
