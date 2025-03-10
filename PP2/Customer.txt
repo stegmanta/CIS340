@@ -1,0 +1,3 @@
+Customer Data:
+Tayler Stegman, Stegman, ID: 32123, Amount: 54356.00, Card: 13f63d4a01cc2ea0cd422f4567be5def, Expiry: 05/43
+John Johnson, Stegman, ID: 34254, Amount: 54.00, Card: 13f63d4a01cc2ea0cd422f4567be5def, Expiry: 07/43
