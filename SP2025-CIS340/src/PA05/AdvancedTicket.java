@@ -46,6 +46,6 @@ public class AdvancedTicket extends Ticket{
 
 	@Override //overrided method to print the object details
 	public String toString(){
-		return super.toString() + " Number of days: " + noOfDaysInAdvance;
+		return super.toString() + "\t" + noOfDaysInAdvance;
 	}
 }// end class

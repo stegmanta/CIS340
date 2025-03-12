@@ -10,42 +10,44 @@ public class Audience implements Comparable<Audience> {
 
 	/*default constructor*/
 	public Audience() {
-		//Fill in
+		this(null,null);
 	}
 
 	/*parameterized constructor*/
 	public Audience(String name, Ticket ticket) {
-		//Fill in
+		this.name = name;
+		this.ticket = ticket;
+		noOfAudience++;
 	}
 
 	/*Getter and setter methods*/
 	public String getName() {
-		//return
+		return this.name;
 	}
 
 	public void setName(String name) {
-		//
+		this.name = name;
 	}
 
-	public Ticket getticket() {
-		//return
+	public Ticket getTicket() {
+		return this.ticket;
 	}
 
-	public void setticket(Ticket ticket) {
-		//
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
 	}
 
 	public static int getNoOfAudience() {
-		//return
+		return noOfAudience;
 	}
 
 	@Override //method to name and ticket object details
 	public String toString() {
-		//return
+		return name + "\t" + ticket.toString();
 	}
 
 	@Override //method to compare the ticket cost of 2 objects
 	public int compareTo(Audience Audience) {
-		//Fill in the logic
+		return Double.compare(this.ticket.ticketCost, Audience.ticket.ticketCost);
 	}
 }// end class

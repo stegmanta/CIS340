@@ -43,7 +43,6 @@ public class OffcampusStudentAdvanceTicket extends AdvancedTicket {
 
 	@Override //overrided method to print the object details
 	public String toString(){
-		return super.toString() + "Student ID: " + this.studentID 
-				+ " Student Status: " + this.status;
+		return super.toString() + "\t" + studentID + "\t" + status;
 	}
 }// end class

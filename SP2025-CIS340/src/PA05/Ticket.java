@@ -27,6 +27,8 @@ public abstract class Ticket implements BaseTicket{
 
 	@Override //method to print ticket number and ticket cost
 	public String toString(){
-		return "Ticket number: " + ticketNumber + " Ticket Cost: " + ticketCost;
+		 return ticketNumber + "\t"
+		         + String.format("$%.2f", ticketCost) + "\t"
+		         + purchaseDate;
 	}
 }// end class
