@@ -12,7 +12,7 @@ public class TicketTest {
 	/*Array of Audience object*/
 	static Audience[] audienceList;
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws FileNotFoundException{
 
 		/*Input variable declaration and initialization*/
 		String name = "";
@@ -139,6 +139,7 @@ public class TicketTest {
 		for(int i = 0; i < audienceList.length; i++) {
 			writer.println("\n" + audienceList[i].toString());
 		}
+		writer.close();
 	}
 	
 	//static method to help with gathering inputs
