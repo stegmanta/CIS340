@@ -286,6 +286,7 @@ public class PhoneBillGUI extends JFrame implements ActionListener{
 			
 			// display message to the text area, use setText() method
 			// To Complete
+			this.textArea.setText(out);
 			
 		}// displayBill
 	
