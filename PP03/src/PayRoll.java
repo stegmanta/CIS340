@@ -58,7 +58,7 @@ public class PayRoll {
 			   int eID = Integer.parseInt(items[1]);
 			   String fName = items[2];
 			   String lName = items[3];
-			   Status status = status.valueOf(items[4]);
+			   Status status = Status.valueOf(items[4]);
 		   }
 	   }
 	   
