@@ -55,7 +55,10 @@ public class PayRoll {
 		   String[] items = line.split(",");
 		   
 		   if("employee".equals(items[0])) {
-			   
+			   int eID = Integer.parseInt(items[1]);
+			   String fName = items[2];
+			   String lName = items[3];
+			   Status status = status.valueOf(items[4]);
 		   }
 	   }
 	   
