@@ -1,6 +1,6 @@
 
 public enum Status {
 	
-	FullTime, Hourly
+	FULLTIME, HOURLY
 
 }

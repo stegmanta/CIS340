@@ -129,7 +129,7 @@ public class PayRecord {
 	public double grossPay(){
 		double gp = 0;
 		//full time employee
-		if(employee.empStatus() == Status.FullTime) {
+		if(employee.empStatus() == Status.FULLTIME) {
 			gp = numMonths * monthlyIncome; 
 		//else hourly
 		}else {
